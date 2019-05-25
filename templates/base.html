@@ -13,9 +13,16 @@
 </head>
 <body>
     <nav>
-        <a href="/blog">Home</a> | 
-        <a href="/newpost">Post an Entry</a>
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/blog'>Blog List</a></li>
+            <li><a href='/newpost'>Write a Blog</a></li>
+            <li><a href='/login'>Login</a></li>
+            <li><a href='/logout'>Logout</a></li>
+        </ul>
     </nav>
+    </br>
+    </br>
 
     {% block content %}
     {% endblock %}
