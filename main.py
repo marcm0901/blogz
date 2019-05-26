@@ -52,16 +52,16 @@ def blog_list():
     if "id" in request.args:
         post_id = request.args.get('id')
         blog = Blog.query.filter_by(id = post_id).all()
-        return render_template('blogs.html', title = title, blog = blog, post_id = post_id)
+        return render_template('blog.html', title = title, blog = blog, post_id = post_id)
 
     elif "user" in request.args:
         user_id = request.args.get('user')
         blog = Blog.query.filter_by(owner_id = user_id).all()
-        return render_template('blogs.html', title = title, blog = blog)
+        return render_template('blog.html', title = title, blog = blog)
 
     else:
         blog = Blog.query.order_by(Blog.id.desc()).all()
-        return render_template('blogs.html', title = title, blog = blog)
+        return render_template('blog.html', title = title, blog = blog)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -164,7 +164,7 @@ def create_new_post():
 
             return redirect('/blog?id={}&user={}'.format(blog_id.id, user.username))
 
-    return render_template('newpost.html', title = "Add a new post", blog_title = blog_title, blog_content = blog_content, title_error = title_error, content_error = content_error)
+    return render_template('newpost.html', title = "Write Something", blog_title = blog_title, blog_content = blog_content, title_error = title_error, content_error = content_error)
 
 @app.route('/logout')
 def logout():

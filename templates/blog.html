@@ -10,9 +10,9 @@
     
     {% for post in blog %}
     
-    <h2><a href="/blogs?id={{post.id}}">{{post.title}}</a></h2>
+    <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
     <p>{{post.content}}</p>
-    <p id="author">By <a href="blogs?user={{post.owner.id}}">{{post.owner.username}}</a>.</p>
+    <p id="author">By <a href="blog?user={{post.owner.id}}">{{post.owner.username}}</a>.</p>
     <hr>            
     
     {% endfor %}  
